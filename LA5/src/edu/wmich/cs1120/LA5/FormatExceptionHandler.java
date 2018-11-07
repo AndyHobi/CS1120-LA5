@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 public class FormatExceptionHandler {
 
 	public static void handleFileNotFoundException(FileNotFoundException e) {
-		System.out.println("Sorry this file has not been found");
+		System.out.println("Error of file " + e.getMessage() );
 		
 	}
 

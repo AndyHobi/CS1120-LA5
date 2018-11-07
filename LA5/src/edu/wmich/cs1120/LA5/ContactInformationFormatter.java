@@ -9,12 +9,12 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 	@Override
 	public void readContactInformation(String[] filePaths) {
 
-		for(String filePath:filePaths) {
-			
+		for (String filePath : filePaths) {
+
 			formatContactInformation(filePath);
 			System.out.println();
 		}
-		
+
 	}
 
 	@Override
@@ -24,30 +24,31 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 		Scanner inputFile = null;
 		try {
 			inputFile = new Scanner(file);
+
+			String name = inputFile.nextLine();
+			String number = inputFile.nextLine();
+			String email = inputFile.nextLine();
+
+			try {
+				formatName(name);
+			} catch (NameFormatException e) {
+				FormatExceptionHandler.handleNameFormatException(e);
+			}
+
+			try {
+				formatPhoneNumber(number);
+			} catch (PhoneNumberFormatException e) {
+				FormatExceptionHandler.handlePhoneNumberFormatException(e);
+			}
+
+			try {
+				formatEmail(email);
+			} catch (EmailAddressFormatException e) {
+				FormatExceptionHandler.handleEmailFormatException(e);
+			}
+
 		} catch (FileNotFoundException e1) {
 			FormatExceptionHandler.handleFileNotFoundException(e1);
-		}
-
-		String name = inputFile.nextLine();
-		String number = inputFile.nextLine();
-		String email = inputFile.nextLine();
-
-		try {
-			formatName(name);
-		} catch (NameFormatException e) {
-			FormatExceptionHandler.handleNameFormatException(e);
-		}
-
-		try {
-			formatPhoneNumber(number);
-		} catch (PhoneNumberFormatException e) {
-			FormatExceptionHandler.handlePhoneNumberFormatException(e);
-		}
-		
-		try {
-			formatEmail(email);
-		} catch (EmailAddressFormatException e) {
-			FormatExceptionHandler.handleEmailFormatException(e);
 		}
 	}
 
@@ -98,9 +99,9 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 				}
 			}
 		}
-		
+
 		throw new PhoneNumberFormatException(phoneNumber);
-		
+
 	}
 
 	@Override
