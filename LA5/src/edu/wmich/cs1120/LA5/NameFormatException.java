@@ -1,5 +1,5 @@
 package edu.wmich.cs1120.LA5;
 
-public class NameFormatException {
+public class NameFormatException extends Exception{
 
 }
