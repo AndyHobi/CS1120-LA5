@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 public class FormatExceptionHandler {
 
 	public static void handleFileNotFoundException(FileNotFoundException e) {
-		// TODO Auto-generated method stub
+		System.out.println("Sorry this file has not been found");
 		
 	}
 
@@ -13,7 +13,7 @@ public class FormatExceptionHandler {
 		String ufNumber = e.getNumber();
 		int count = 0;
 		char[] charArray = new char[ufNumber.length()];
-		int[] intArray = new int[9];
+		int[] intArray = new int[10];
 		
 		for(int i = 0; i < ufNumber.length(); i++) {
 			charArray[i] = new Character(ufNumber.charAt(i));
@@ -21,44 +21,44 @@ public class FormatExceptionHandler {
 		
 		for(int i = 0; i < charArray.length; i++) {
 			switch (charArray[i]) {
-				case 0: //<------------ these need to be written as '0' because charArray[i] is char not int
-					intArray[count] = charArray[i];
+				case '0': //<------------ these need to be written as '0' because charArray[i] is char not int
+					intArray[count] =  charArray[i];
 					count ++;
 					break;
-				case 1:
-					intArray[count] = charArray[i];
+				case '1':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 2:
-					intArray[count] = charArray[i];
+				case '2':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 3:
-					intArray[count] = charArray[i];
+				case '3':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 4:
-					intArray[count] = charArray[i];
+				case '4':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 5:
-					intArray[count] = charArray[i];
+				case '5':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 6:
-					intArray[count] = charArray[i];
+				case '6':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 7:
-					intArray[count] = charArray[i];
+				case '7':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 8:
-					intArray[count] = charArray[i];
+				case '8':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
-				case 9:
-					intArray[count] = charArray[i];
+				case '9':
+					intArray[count] = (int) charArray[i];
 					count ++;
 					break;
 			}
