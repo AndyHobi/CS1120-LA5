@@ -11,9 +11,14 @@ public class FormatExceptionHandler {
 
 	public static void handlePhoneNumberFormatException(PhoneNumberFormatException e) {
 		String ufNumber = e.getNumber();
+		//System.out.println("system format execption check " + ufNumber);
 		int count = 0;
 		char[] charArray = new char[ufNumber.length()];
 		int[] intArray = new int[10];
+		
+		for(int i = 0; i < 10; i++) {
+			intArray[i] = 0;
+		}
 		
 		for(int i = 0; i < ufNumber.length(); i++) {
 			charArray[i] = new Character(ufNumber.charAt(i));
@@ -22,43 +27,43 @@ public class FormatExceptionHandler {
 		for(int i = 0; i < charArray.length; i++) {
 			switch (charArray[i]) {
 				case '0': //<------------ these need to be written as '0' because charArray[i] is char not int
-					intArray[count] =  charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '1':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '2':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '3':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '4':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '5':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '6':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '7':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '8':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 				case '9':
-					intArray[count] = (int) charArray[i];
+					intArray[count] = charArray[i] - '0';
 					count ++;
 					break;
 			}
@@ -72,8 +77,9 @@ public class FormatExceptionHandler {
 
 	
 	public static void handleEmailFormatException(EmailAddressFormatException e) {
+		//System.out.println("email exection formater");
 		String email = e.getEmail();
-		email.toLowerCase();
+		email = email.toLowerCase();
 		System.out.println(email);
 	}
 
