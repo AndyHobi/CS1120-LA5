@@ -6,4 +6,11 @@ public class NameFormatException extends Exception{
 	public String getName() {
 		return name;
 	}
+
+	//String name;
+	
+	NameFormatException(String name) {
+		this.name = name;
+	}
+	
 }
