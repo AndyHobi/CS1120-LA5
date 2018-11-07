@@ -12,14 +12,16 @@ public class FormatExceptionHandler implements IFormatExceptionHandler {
 
 	@Override
 	public void handlePhoneNumberFormatException(PhoneNumberFormatException e) {
-		// TODO Auto-generated method stub
+		string unformatedNumber = e.getNumber();
+		
 		
 	}
 
 	@Override
 	public void handleEmailFormatException(EmailAddressFormatException e) {
-		// TODO Auto-generated method stub
-		
+		String email = e.getEmail();
+		email.toLowerCase();
+		System.out.println(email);
 	}
 
 	@Override
