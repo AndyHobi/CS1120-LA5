@@ -21,7 +21,7 @@ public class FormatExceptionHandler {
 		
 		for(int i = 0; i < charArray.length; i++) {
 			switch (charArray[i]) {
-				case 0:
+				case 0: //<------------ these need to be written as '0' because charArray[i] is char not int
 					intArray[count] = charArray[i];
 					count ++;
 					break;

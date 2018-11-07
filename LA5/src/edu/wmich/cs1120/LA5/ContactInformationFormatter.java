@@ -54,7 +54,7 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 	@Override
 	public void formatEmail(String email) throws EmailAddressFormatException {
 
-		if (email.toLowerCase().compareTo(email) == 1) {
+		if (email.toLowerCase().compareTo(email) == 0) {
 			System.out.println(email);
 		} else {
 			throw new EmailAddressFormatException(email);
@@ -98,6 +98,9 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 				}
 			}
 		}
+		
+		throw new PhoneNumberFormatException(phoneNumber);
+		
 	}
 
 	@Override
@@ -107,10 +110,10 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 
 		String[] FLName = name.split(" ");
 
-		if (FLName[0].charAt(0) > 64 && FLName[0].charAt(0) < 93) {
-			if (FLName[1].charAt(0) > 64 && FLName[1].charAt(0) < 93) {
-				if (FLName[0].substring(1).compareTo(FLName[0].toLowerCase().substring(1)) == 1) {
-					if (FLName[1].substring(1).compareTo(FLName[1].toLowerCase().substring(1)) == 1) {
+		if (FLName[0].charAt(0) >= 'A' && FLName[0].charAt(0) <= 'Z') {
+			if (FLName[1].charAt(0) >= 'A' && FLName[1].charAt(0) <= 'Z') {
+				if (FLName[0].substring(1).compareTo(FLName[0].toLowerCase().substring(1)) == 0) {
+					if (FLName[1].substring(1).compareTo(FLName[1].toLowerCase().substring(1)) == 0) {
 						System.out.println(name);
 						return;
 					}
