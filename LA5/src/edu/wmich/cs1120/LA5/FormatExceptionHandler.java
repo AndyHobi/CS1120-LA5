@@ -81,7 +81,14 @@ public class FormatExceptionHandler implements IFormatExceptionHandler {
 
 	@Override
 	public void handleNameFormatException(NameFormatException e) {
-		// TODO Auto-generated method stub
+		String ufName = e.getName();
+		String[] stringArray = new String[ufName.length()];
+		
+		ufName.toLowerCase();
+		stringArray = ufName.split(" ");
+		stringArray[0] = ufName.substring(0, 1).toUpperCase() + ufName.substring(1);
+		stringArray[1] = ufName.substring(0, 1).toUpperCase() + ufName.substring(1);
+		System.out.println(stringArray[0] + " " + stringArray[1]);
 		
 	}
 
