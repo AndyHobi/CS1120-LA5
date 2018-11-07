@@ -25,7 +25,7 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 		
 		try { formatName(name); }
 		catch(NameFormatException e) {
-			IFormatExceptionHandler.handleNameFormatException(e);
+			FormatExceptionHandler.handleNameFormatException(e);
 		}
 		
 	}
@@ -48,8 +48,17 @@ public class ContactInformationFormatter implements IContactInformationFormatter
 		String[] FLName = name.trim().split(" ");
 		
 		if(FLName[0].charAt(0) > 64 && FLName[0].charAt(0) < 93) {
-			
+			if(FLName[1].charAt(0) > 64 && FLName[1].charAt(0) < 93) {
+				if(FLName[0].substring(1).compareTo(FLName[0].toLowerCase().substring(1)) == 0) {
+					if(FLName[1].substring(1).compareTo(FLName[1].toLowerCase().substring(1)) == 0) {
+						System.out.println(name);
+						return;
+					}
+				}
+			}
 		}
+		
+		throw new NameFormatException(name);
 		
 	}
 
