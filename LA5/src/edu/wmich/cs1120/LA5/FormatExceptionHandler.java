@@ -2,16 +2,14 @@ package edu.wmich.cs1120.LA5;
 
 import java.io.FileNotFoundException;
 
-public class FormatExceptionHandler implements IFormatExceptionHandler {
+public class FormatExceptionHandler {
 
-	@Override
-	public void handleFileNotFoundException(FileNotFoundException e) {
+	public static void handleFileNotFoundException(FileNotFoundException e) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void handlePhoneNumberFormatException(PhoneNumberFormatException e) {
+	public static void handlePhoneNumberFormatException(PhoneNumberFormatException e) {
 		String ufNumber = e.getNumber();
 		int count = 0;
 		char[] charArray = new char[ufNumber.length()];
@@ -72,15 +70,14 @@ public class FormatExceptionHandler implements IFormatExceptionHandler {
 		
 	}
 
-	@Override
-	public void handleEmailFormatException(EmailAddressFormatException e) {
+	
+	public static void handleEmailFormatException(EmailAddressFormatException e) {
 		String email = e.getEmail();
 		email.toLowerCase();
 		System.out.println(email);
 	}
 
-	@Override
-	public void handleNameFormatException(NameFormatException e) {
+	public static void handleNameFormatException(NameFormatException e) {
 		String ufName = e.getName();
 		String[] stringArray = new String[ufName.length()];
 		
